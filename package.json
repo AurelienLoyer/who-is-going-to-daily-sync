@@ -1,0 +1,19 @@
+{
+  "name": "who-is-going-to-daily-sync",
+  "version": "1.0.0",
+  "description": "Help teams to know who is going to daily sync",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/T3kstiil3/who-is-going-to-daily-sync.git"
+  },
+  "author": "Aurelien Loyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/T3kstiil3/who-is-going-to-daily-sync/issues"
+  },
+  "homepage": "https://github.com/T3kstiil3/who-is-going-to-daily-sync#readme"
+}
