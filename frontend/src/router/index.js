@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import TeamWeek from "../views/TeamWeek.vue";
 
 Vue.use(VueRouter);
 
@@ -9,6 +10,11 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path: "/orga/:orgaId/teams/:teamId",
+    name: "TeamWeek",
+    component: TeamWeek
   },
   {
     path: "/about",

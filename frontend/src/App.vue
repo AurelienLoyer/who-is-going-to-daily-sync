@@ -1,56 +1,33 @@
 <template>
-  <!-- <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>-->
   <div class="container">
+    <router-view />
     <div class="shape">
-      <div v-for="index in 50" :key="index" :class="`shape-container--${index} shape-animation`">
+      <div
+        v-for="index in 150"
+        :key="index"
+        :class="`shape-container--${index} shape-animation`"
+      >
         <div class="random-shape"></div>
       </div>
     </div>
-    <ul class="days">
-      <li class="days__item" v-for="index in 5" :key="index">
-        <div class="days__item__avatar" :style="{ backgroundImage: 'url(' + image + ')' }"></div>
-        <div class="days__item__name">Monday</div>
-      </li>
-    </ul>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "App",
-  data(){
-    return {
-      image: 'https://media-exp1.licdn.com/dms/image/C4E03AQHlUawZJnh5HQ/profile-displayphoto-shrink_200_200/0?e=1591833600&v=beta&t=zTmEttNyDrlUsasnMIwHi6wHH6P2WlYNg4PFBL7PUY8'
-    }
+  data() {
+    return {};
   }
 };
 </script>
 
 <style lang="scss">
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+@import "./scss/_variables.scss";
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css");
 @import url("https://fonts.googleapis.com/css?family=Shrikhand");
 @import url("https://fonts.googleapis.com/css?family=Rubik:400");
-
-$primary-color: #667eea;
-$secondary-color: #764ba2;
-
-.days {
-  &__item {
-    &__avatar {
-      width: 50px;
-      height: 50px;
-    }
-    &__name {
-    }
-  }
-}
 
 body {
   margin: 0;
@@ -67,9 +44,13 @@ body {
     $secondary-color 100%
   );
 
-  .inner-container {
+  &__inner {
     width: 100%;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    overflow: auto;
   }
 }
 
@@ -79,6 +60,8 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  top: 0;
+  z-index: 0;
 }
 
 .random-shape:after {
