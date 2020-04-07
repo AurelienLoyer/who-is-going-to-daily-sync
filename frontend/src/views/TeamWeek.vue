@@ -1,6 +1,7 @@
 <template>
   <div class="week">
     <h1>🤔 Who is going to daily sync ? 📣</h1>
+    <h2 v-if="team">{{ team.name }}</h2>
     <ul class="days" v-if="team && team.days">
       <li class="days__item" v-for="(item, index) in team.days" :key="index">
         <div class="days__item__avatar" :style="{ backgroundImage: 'url(' + item.avatar + ')' }"></div>
@@ -46,6 +47,14 @@ export default {
 
 h1 {
   font: normal 3.6rem "Shrikhand", Helvetica, sans-serif;
+}
+
+h2 {
+  font: normal 1.6rem "Shrikhand", Helvetica, sans-serif;
+}
+
+h1,
+h2 {
   color: #fff;
   letter-spacing: 0.05em;
   text-align: center;
@@ -60,6 +69,13 @@ h1 {
   height: 100vh;
   position: relative;
   z-index: 10;
+  padding: 25px;
+
+  @media screen and (max-width: 640px) {
+    height: 100%;
+    overflow-y: auto;
+    display: block;
+  }
 
   .days {
     display: flex;
@@ -70,6 +86,12 @@ h1 {
     margin: 0;
     list-style: none;
     color: white;
+
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-top: 40px;
+    }
 
     &__item {
       display: flex;
@@ -87,7 +109,7 @@ h1 {
         border: solid 5px;
         display: flex;
         flex-direction: column;
-        /* height: 150px; */
+        background-position: center center;
         align-items: center;
         justify-content: space-between;
       }

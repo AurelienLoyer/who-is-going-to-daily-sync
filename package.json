@@ -4,6 +4,7 @@
   "description": "Help teams to know who is going to daily sync",
   "main": "index.js",
   "scripts": {
+    "deploy": "firebase deploy --only hosting",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/T3kstiil3/who-is-going-to-daily-sync/issues"
   },
-  "homepage": "https://github.com/T3kstiil3/who-is-going-to-daily-sync#readme"
+  "homepage": "https://github.com/T3kstiil3/who-is-going-to-daily-sync#readme",
+  "dependencies": {
+    "canvas-confetti": "^1.2.0"
+  }
 }
